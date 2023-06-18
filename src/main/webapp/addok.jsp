@@ -1,5 +1,10 @@
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: utente
+  Date: 07/06/2021
+  Time: 18:12
+  To change this template use File | Settings | File Templates.
+--%>
 <html>
 <head>
     <title>Biblioteche della regione Campania</title>
@@ -14,12 +19,10 @@
 </head>
 <body>
 <%@include file= "navbarAdmin.jsp" %>
-<div class="container-fluid bg-2 text-center">
+<div class="container-fluid bg-1 text-center">
     <a name="who"></a>
-    <div><h3 class="margin">Attenzione! Errore nel login, si prega di riprovare</h3>
-    <a href="login.jsp"><button class="btn-default" type="button"> Riprova</button></a></div><br>
-    <img src="img/error.jpg" class="img-responsive img-circle margin" style="display:inline" alt="copertina" width="300" height="300">
+    <h3 class="margin">Aggiunta avvenuta con succusso!</h3>
+    <img src="img/check.png" class="img-responsive img-circle margin" style="display:inline" alt="copertina" width="300" height="300">
 </div>
 </body>
 </html>
-

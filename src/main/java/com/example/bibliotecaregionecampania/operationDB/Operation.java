@@ -49,35 +49,28 @@ public class Operation {
 
     //Admin
     public boolean isUserDb(String myusername, String password) {
-        System.out.println("Sono in isUserDb ");
         MyCollectionUser sc = new MyCollectionUser();
-        System.out.println("Sono in isUserDb0 ");
         MongoCollection<Document> collection = sc.getMyCollection();
-        System.out.println("Sono in isUserDb1 ");
         //ritorna oggetto iterabile
         FindIterable<Document> iterDoc = collection.find(Filters.eq("Username", myusername));
-        System.out.println("Sono in isUserDb2 ");
+
         int i = 1;
 
         Iterator it = iterDoc.iterator();
         System.out.println("Sono in isUserDb3 ");
         ArrayList<AdminBean> arrayBib= new ArrayList<AdminBean>();
         while (it.hasNext()) {
-            System.out.println("Sono nel while1");
             org.bson.Document document = (org.bson.Document) it.next();
-            System.out.println("Sono nel while2");
             AdminBean user = new AdminBean(document.getString("Username"), document.getString("Password"));
-            System.out.println("Sono nel while3");
             if (user.getPassword().equals(password)) {
                 i++;
-                System.out.println("Sono nel while4 e dentro if");
                 return true;
             }
         } return false;
     }
 
     //per modificare FUNZIONA
-    public void update(ObjectId id, String indirizzo, String denominazione, String telefono, String email){
+    public void update(Object id, Integer cap, String provincia, String telefono, String url, String denominazione, String email, String indirizzo){
         MyCollection sc = new MyCollection();
         MongoCollection<Document> collection= sc.getMyCollection();
 
@@ -85,6 +78,10 @@ public class Operation {
         collection.updateOne(Filters.eq("_id", id), Updates.set("Denominazione", denominazione) );
         collection.updateOne(Filters.eq("_id", id), Updates.set("Telefono", telefono) );
         collection.updateOne(Filters.eq("_id", id), Updates.set("Email", email) );
+        collection.updateOne(Filters.eq("_id", id), Updates.set("Cap", cap) );
+        collection.updateOne(Filters.eq("_id", id), Updates.set("Provincia", provincia) );
+        collection.updateOne(Filters.eq("_id", id), Updates.set("Url", url) );
+
     }
 
     //cancellare documento FUNZIONA
@@ -96,7 +93,7 @@ public class Operation {
     }
 
     //per inserire valori
-    public void insert(Integer cap, String provincia, String telefono, String url, String comune, String denominazione, String email,  Integer fid, String indirizzo){
+    public void insert(Integer cap, String provincia, String telefono, String url, String comune, String denominazione, String email,  String codiceIsil, String indirizzo){
 
         MyCollection sc = new MyCollection();
         MongoCollection<Document> collection= sc.getMyCollection();
@@ -107,10 +104,12 @@ public class Operation {
                 .append("Url", url)
                 .append("Comune", comune)
                 .append("Email", email)
-                .append("Fid", fid)
+                .append("CodiceIsil", codiceIsil)
                 .append("Denominazione", denominazione)
                 .append("Indirizzo", indirizzo);
         collection.insertOne(document);
         System.out.println("Documento inserito con successo");
     }
+
+
 }

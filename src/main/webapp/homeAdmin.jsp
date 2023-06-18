@@ -8,8 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Biblioteche</title>
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home Admin Biblioteche</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/index.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
@@ -28,7 +28,7 @@
         proprio tesoro di conoscenza e cultura.
         Queste biblioteche, disseminate in città, piccoli comuni e centri culturali della regione,
         offrono un'ampia gamma di servizi e risorse per soddisfare le esigenze di lettori e
-        ricercatori di ogni fascia d'età.
+        ricercatori di ogni fascia d'eta'.
     </p>
 </div>
 </body>

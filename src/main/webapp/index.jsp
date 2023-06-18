@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
-    <title>Alberi Monumentali</title>
+    <title>Biblioteche della regione Campania</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -41,16 +41,16 @@
     <div class="row slideanim">
         <div class="col-sm-4">
             <span class="fas fa-layer-group logo-small"></span>
-            <h4>RACCOLTA DI LIBRI libri</h4>
+            <h4>RACCOLTA DI LIBRI</h4>
             <p>Sono conosciute principalmente per la loro vasta
-                raccolta di libri. Offrono una varietà di generi,
+                raccolta di libri. Offrono una varieta' di generi,
                 autori e temi per soddisfare i diversi interessi dei lettori.</p>
         </div>
         <div class="col-sm-4">
             <span class="fas fa-book-reader logo-small"></span>
             <h4>ACCESSO ALL'INFORMAZIONE</h4>
             <p>Forniscono accesso a una vasta gamma di informazioni,
-                oltre ai libri. Ciò include risorse digitali, giornali, riviste,
+                oltre ai libri. Cio' include risorse digitali, giornali, riviste,
                 pubblicazioni specializzate, banche dati e molto altro ancora.</p>
         </div>
         <div class="col-sm-4">
@@ -82,7 +82,7 @@
             <span class="fas fa-bookmark logo-small"></span>
             <h4>ATTIVITA' CULTURALI</h4>
             <p>Organizzano spesso laboratori, eventi culturali, letture,
-                presentazioni di libri, mostre e altre attività che coinvolgono la comunità.
+                presentazioni di libri, mostre e altre attivita' che coinvolgono la comunita'.
                 Queste iniziative promuovono la partecipazione, l'apprendimento e la condivisione
                 di idee.</p>
         </div>

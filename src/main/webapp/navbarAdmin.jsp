@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -38,10 +37,10 @@
                         <li><a href="ServletCatalogAdmin?provincia=s">Salerno</a></li>
                     </ul>
                 </li>
-                <li><a href="addAlbero.jsp">INSERISCI BIBLIOTECA</a></li>
+                <li><a href="addBib.jsp">INSERISCI BIBLIOTECA</a></li>
                 <li> <a href="Logout" class="btn">
-                        <span class="glyphicon glyphicon-log-out"></span> LOG-OUT
-                    </a>
+                    <span class="glyphicon glyphicon-log-out"></span> LOG-OUT
+                </a>
                 </li>
 
             </ul>
@@ -50,5 +49,4 @@
 </nav>
 </body>
 </html>
-
 

@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!-- Navbar -->
@@ -15,7 +14,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.jsp">CHI SIAMO</a></li>
-                 <li class="dropdown">
+                <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">BIBLIOTECHE
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -32,5 +31,4 @@
         </div>
     </div>
 </nav>
-
 

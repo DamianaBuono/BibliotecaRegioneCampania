@@ -1,7 +1,9 @@
-
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="bean.BibliotecaBean" %>
+<%@ page import="com.example.bibliotecaregionecampania.bean.BibliotecaBean" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 <html>
 <head>
@@ -14,7 +16,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="css/index.css">
-    <title>Catalogo</title>
+    <title>Catalogo Biblioteche</title>
 
 
     <style>
@@ -31,7 +33,7 @@
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
     <a name="who"></a>
-    <h3 class="margin">Alberi monumentali della regione Campania</h3>
+    <h3 class="margin">Biblioteche della regione Campania</h3>
     <img src="img/copertina.jpeg" class="img-responsive img-circle margin" style="display:inline" alt="copertina" width="550" height="550">
 
 </div>
@@ -42,7 +44,7 @@
         <div class="row ">
             <div class="card x">
                 <div class="cart-list">
-                     <h1>Alberi monumentali a <%=list.get(0).getProvincia()%></h1>
+                    <h1>Biblioteche a <%=list.get(0).getProvincia()%></h1>
                     <input class="form-control" id="myInput" type="text" placeholder="Cerca...">
                     <table class="table table-striped">
                         <thead class="thead-primary">
@@ -54,8 +56,7 @@
                             <th>Telefono</th>
                             <th>Email</th>
                             <th>Url</th>
-                            <th>Modifica</th>
-                            <th>Elimina</th>
+
                         </tr>
                         </thead>
                         <tbody id="myTable">
@@ -69,6 +70,7 @@
                             <td role = "telefono"><%=e.getTelefono()%></td>
                             <td role = "email"><%=e.getEmail()%></td>
                             <td role = "url"><%=e.getUrl()%></td> </tr>
+
                         <%}%>
                         </tbody>
                     </table>
@@ -92,6 +94,14 @@
         });
     });
 
+
+
 </script>
+<style>
+    #myTable td[role="url"] {
+        max-width: 200px; /* Imposta la larghezza massima desiderata */
+        word-wrap: break-word;
+    }
+</style>
 </body>
 </html>

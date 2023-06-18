@@ -1,7 +1,9 @@
-
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="bean.BibliotecaBean" %>
+<%@ page import="com.example.bibliotecaregionecampania.bean.BibliotecaBean" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
 <html>
 <head>
 
@@ -28,7 +30,7 @@
         <div class="row ">
             <div class="card x">
                 <div class="cart-list">
-                    <h1>Alberi monumentali a <%=list.get(0).getProvincia()%></h1>
+                    <h1>Biblioteche a <%=list.get(0).getProvincia()%></h1>
                     <input class="form-control" id="myInput" type="text" placeholder="Cerca...">
                     <table class="table">
                         <thead class="thead-primary">
@@ -48,7 +50,7 @@
                         <%
                             for (BibliotecaBean e : list) { %>
                         <tr id = "<%=e.getId()%>">
-                            <td role = "nomeLuogo"><%=e.getDenominazione()%> </td>
+                            <td role = "denominazione"><%=e.getDenominazione()%> </td>
                             <td role = "provincia"><%=e.getProvincia()%></td>
                             <td role = "indirizzo"><%=e.getIndirizzo()%></td>
                             <td role = "cap"><%=e.getCap()%></td>
@@ -88,37 +90,61 @@
             </div>
             <!--footer -->
             <div class="modal-footer">
-                <button type="button"  class="btn btn-secondary removeX" data-dismiss="modal" onclick="fRemoveAlberoRiuscito()">Si, elimina</button>
+                <button type="button"  class="btn btn-secondary removeX" data-dismiss="modal" onclick="fRemoveBibliotecaRiuscito()">Si, elimina</button>
                 <button type="button" class="btn btn-primary" data-dismiss="modal" >Chiudi</button>
             </div>
         </div>
     </div>
 </div>
-<div class="alert alert-success alert-dismissible" id="removeAlberoRiuscito">
+
+<div class="alert alert-success alert-dismissible" id="removeBibilitcaRiuscito">
     <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
     <strong>Perfetto!</strong> Biblioteca rimossa con successo dal sistema.<br>
 </div>
 
 <script>
 
-document.getElementById("removeBibliotecaRiuscito").style.display="none";
-function fRemoveAlberoRiuscito(){
-    document.getElementById("removeBibliotecaRiuscito").style.display="block";
-}
+    document.getElementById("removeBibilitcaRiuscito").style.display="none";
+    function fRemoveBibliotecaRiuscito(){
+        document.getElementById("removeBibilitcaRiuscito").style.display="block";
+    }
+
 
 
     $(document).ready(function(){
-    $("#myInput").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#myTable tr").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
         });
     });
-});
 
 
 </script>
+
+<style>
+    #myTable td[role="url"] {
+        max-width: 200px; /* Imposta la larghezza massima desiderata */
+        word-wrap: break-word;
+    }
+</style>
+
+<style>
+    #myTable td[role="email"] {
+        max-width: 200px; /* Imposta la larghezza massima desiderata */
+        word-wrap: break-word;
+    }
+</style>
+
+<style>
+    #myTable td[role="indirizzo"] {
+        max-width: 200px; /* Imposta la larghezza massima desiderata */
+        word-wrap: break-word;
+    }
+</style>
 <script type="text/javascript" src= "js/controlCatalog.js"></script>
+
 <%@include file= "footer.jsp" %>
 
 </body>
