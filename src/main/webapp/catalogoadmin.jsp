@@ -58,7 +58,7 @@
                             <td role = "email"><%=e.getEmail()%></td>
                             <td role = "url"><%=e.getUrl()%></td>
                             <td><button id ="<%=e.getId()%>" type="submit" class="button button2 submitter">Modifica</button></td>
-                            <td><button type="button" class="removeX"><span style="font-size:20px; color: red;" class="glyphicon glyphicon-remove"></span></button></td>
+                            <td><button type="button" class="removeX" data-toggle="modal" data-target="#elimina"><span style="font-size:20px; color: red;" class="glyphicon glyphicon-remove"></span></button></td>
                         </tr>
                         <%}
                             // %>
