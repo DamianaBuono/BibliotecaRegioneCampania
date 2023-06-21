@@ -70,17 +70,11 @@ public class Operation {
     }
 
     //per modificare FUNZIONA
-    public void update(Object id, Integer cap, String provincia, String telefono, String url, String denominazione, String email, String indirizzo){
+    public void update(Object id, String indirizzo){
         MyCollection sc = new MyCollection();
         MongoCollection<Document> collection= sc.getMyCollection();
 
         collection.updateOne(Filters.eq("_id", id), Updates.set("Indirizzo", indirizzo) );
-        collection.updateOne(Filters.eq("_id", id), Updates.set("Denominazione", denominazione) );
-        collection.updateOne(Filters.eq("_id", id), Updates.set("Telefono", telefono) );
-        collection.updateOne(Filters.eq("_id", id), Updates.set("Email", email) );
-        collection.updateOne(Filters.eq("_id", id), Updates.set("Cap", cap) );
-        collection.updateOne(Filters.eq("_id", id), Updates.set("Provincia", provincia) );
-        collection.updateOne(Filters.eq("_id", id), Updates.set("Url", url) );
 
     }
 
