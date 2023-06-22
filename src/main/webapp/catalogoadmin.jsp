@@ -50,13 +50,48 @@
                         <%
                             for (BibliotecaBean e : list) { %>
                         <tr id = "<%=e.getId()%>">
-                            <td role = "denominazione"><%=e.getDenominazione()%> </td>
-                            <td role = "provincia"><%=e.getProvincia()%></td>
-                            <td role = "indirizzo"><%=e.getIndirizzo()%></td>
-                            <td role = "cap"><%=e.getCap()%></td>
-                            <td role = "telefono"><%=e.getTelefono()%></td>
-                            <td role = "email"><%=e.getEmail()%></td>
-                            <td role = "url"><%=e.getUrl()%></td>
+                            <% if (e.getDenominazione() == null || e.getDenominazione().isEmpty()) { %>
+                            <td role="denominazione"> - </td>
+                            <% } else { %>
+                            <td role="denominazione"><%= e.getDenominazione() %></td>
+                            <% } %>
+
+                            <% if (e.getProvincia() == null || e.getProvincia().isEmpty()) { %>
+                            <td role="provincia"> - </td>
+                            <% } else { %>
+                            <td role="provincia"><%= e.getProvincia() %></td>
+                            <% } %>
+
+                            <% if (e.getIndirizzo() == null || e.getIndirizzo().isEmpty()) { %>
+                            <td role="indirizzo"> - </td>
+                            <% } else { %>
+                            <td role="indirizzo"><%= e.getIndirizzo() %></td>
+                            <% } %>
+
+                            <% if (e.getCap() == null){ %>
+                            <td role="cap"> - </td>
+                            <% } else { %>
+                            <td role="cap"><%= e.getCap() %></td>
+                            <% } %>
+
+                            <% if (e.getTelefono() == null || e.getTelefono().isEmpty()) { %>
+                            <td role="telefono"> - </td>
+                            <% } else { %>
+                            <td role="telefono"><%= e.getTelefono() %></td>
+                            <% } %>
+
+                            <% if (e.getEmail() == null || e.getEmail().isEmpty()) { %>
+                            <td role="email"> - </td>
+                            <% } else { %>
+                            <td role="email"><%= e.getEmail() %></td>
+                            <% } %>
+
+                            <% if (e.getUrl() == null || e.getUrl().isEmpty()) { %>
+                            <td role="url"> - </td>
+                            <% } else { %>
+                            <td role="url"><%= e.getUrl() %></td>
+                            <% } %>
+
                             <td><button id ="<%=e.getId()%>" type="submit" class="button button2 submitter">Modifica</button></td>
                             <td><button type="button" class="removeX" data-toggle="modal" data-target="#elimina"><span style="font-size:20px; color: red;" class="glyphicon glyphicon-remove"></span></button></td>
                         </tr>

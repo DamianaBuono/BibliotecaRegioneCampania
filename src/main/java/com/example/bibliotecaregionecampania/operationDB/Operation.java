@@ -74,7 +74,7 @@ public class Operation {
         MyCollection sc = new MyCollection();
         MongoCollection<Document> collection= sc.getMyCollection();
 
-        collection.updateOne(Filters.eq("_id", id), Updates.set("Indirizzo", indirizzo) );
+        collection.updateOne(Filters.eq("_id", id), Updates.set("Indirizzo", indirizzo));
 
     }
 
