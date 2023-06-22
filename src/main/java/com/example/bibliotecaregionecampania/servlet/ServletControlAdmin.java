@@ -38,14 +38,16 @@ public class ServletControlAdmin extends HttpServlet {
 
                      ObjectId id = new ObjectId(request.getParameter("id"));
                      String indirizzo = request.getParameter("indirizzo");
-
-                    op.update(id, indirizzo);
+                     String comune = request.getParameter("comune");
+                     String telefono= request.getParameter("telefono");
+                    op.update(id, indirizzo,comune, telefono);
 
                     if (request.getHeader("x-requested-with")!= null){
                         response.setContentType("application/json");
                         JsonObject obj = new JsonObject ();
                         obj.addProperty("newIndirizzo", indirizzo);
-
+                        obj.addProperty("newComune", comune);
+                        obj.addProperty("newTelefono", telefono);
                         System.out.println(obj);
                         response.getWriter().write(new Gson().toJson(obj));
                     }

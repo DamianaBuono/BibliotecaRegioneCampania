@@ -37,6 +37,7 @@
                         <tr class="text-center">
                             <th>Nome</th>
                             <th>Provincia</th>
+                            <th>Comune</th>
                             <th>Indirizzo</th>
                             <th>Cap</th>
                             <th>Telefono</th>
@@ -60,6 +61,12 @@
                             <td role="provincia"> - </td>
                             <% } else { %>
                             <td role="provincia"><%= e.getProvincia() %></td>
+                            <% } %>
+
+                            <% if (e.getComune() == null || e.getComune().isEmpty()) { %>
+                            <td role="comune"> - </td>
+                            <% } else { %>
+                            <td role="comune"><%= e.getComune() %></td>
                             <% } %>
 
                             <% if (e.getIndirizzo() == null || e.getIndirizzo().isEmpty()) { %>
@@ -89,11 +96,11 @@
                             <% if (e.getUrl() == null || e.getUrl().isEmpty()) { %>
                             <td role="url"> - </td>
                             <% } else { %>
-                            <td role="url"><%= e.getUrl() %></td>
+                            <td role="url"><a type="button" class="btn btn-default" href="<%= e.getUrl() %>">Visualizza sito</a></td>
                             <% } %>
 
-                            <td><button id ="<%=e.getId()%>" type="submit" class="button button2 submitter">Modifica</button></td>
-                            <td><button type="button" class="removeX" data-toggle="modal" data-target="#elimina"><span style="font-size:20px; color: red;" class="glyphicon glyphicon-remove"></span></button></td>
+                            <td><button id ="<%=e.getId()%>" type="submit" class="btn btn-default button button2 submitter">Modifica</button></td>
+                            <td><button type="button" class="btn btn-default removeX" data-toggle="modal" data-target="#elimina"><span style="font-size:20px; color: red;" class="glyphicon glyphicon-remove"></span></button></td>
                         </tr>
                         <%}
                             // %>

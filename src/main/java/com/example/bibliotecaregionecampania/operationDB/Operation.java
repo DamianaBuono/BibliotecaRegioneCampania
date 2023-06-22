@@ -70,12 +70,13 @@ public class Operation {
     }
 
     //per modificare FUNZIONA
-    public void update(Object id, String indirizzo){
+    public void update(Object id, String indirizzo, String telefono, String comune){
         MyCollection sc = new MyCollection();
         MongoCollection<Document> collection= sc.getMyCollection();
 
         collection.updateOne(Filters.eq("_id", id), Updates.set("Indirizzo", indirizzo));
-
+        collection.updateOne(Filters.eq("_id", id), Updates.set("Comune", comune));
+        collection.updateOne(Filters.eq("_id", id), Updates.set("Telefono", telefono));
     }
 
     //cancellare documento FUNZIONA
